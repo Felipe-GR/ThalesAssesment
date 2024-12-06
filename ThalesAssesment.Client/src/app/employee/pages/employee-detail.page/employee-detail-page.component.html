@@ -1,0 +1,13 @@
+<div class="formgrid grid">
+  <p-card class="mt-5 mx-8">
+    <ng-template pTemplate="title">
+      {{ employee.name }}
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      {{ employee.age }} years old
+    </ng-template>
+    <app-employee-pic [employee]="employee" [imgSize]="300" />
+    <p><i class="pi pi-money-bill"></i> {{ employee.salary | currency}}</p>
+    <p><i class="pi pi-calendar-plus"></i> {{ employee.anualSalary | currency}}</p>
+  </p-card>
+</div>

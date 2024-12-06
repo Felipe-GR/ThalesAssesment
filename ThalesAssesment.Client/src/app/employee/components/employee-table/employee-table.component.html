@@ -1,0 +1,39 @@
+<p-table [value]="employees"
+selectionMode="single"
+[(selection)]="selectedItem"
+(selectionChange)="selectionChanged($event)"
+[tableStyle]="{'min-width': '60rem'}">
+  <ng-template pTemplate="header">
+      <tr>
+          <th pSortableColumn="id" style="width:10%">
+              Id <p-sortIcon field="id" />
+          </th>
+          <th pSortableColumn="name" style="width:20%" colspan="2">
+              Name <p-sortIcon field="name" />
+          </th>
+          <th pSortableColumn="age" style="width:10%">
+            Age <p-sortIcon field="age" />
+        </th>
+          <th pSortableColumn="salary" style="width:20%">
+              Salary <p-sortIcon field="salary" />
+          </th>
+          <th pSortableColumn="anualSalary" style="width:20%">
+              Anual Salary <p-sortIcon field="anualSalary" />
+          </th>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-employee>
+      <tr [pSelectableRow]="employee">
+          <td>{{ employee.id }}</td>
+          <td>
+            <app-employee-pic [employee]="employee" [imgSize]="100"></app-employee-pic>
+          </td>
+          <td>
+            {{ employee.name }}
+          </td>
+          <td>{{ employee.age }}</td>
+          <td>{{ employee.salary | currency}}</td>
+          <td>{{ employee.anualSalary | currency}}</td>
+      </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,9 @@
+<p-menubar [model]="items">
+  <img src="./favicon.ico" alt="Icono">
+  <ng-template pTemplate="item" let-item>
+    <a [routerLink]="item.route" class="p-menuitem-link">
+      <i [class]="item.icon"></i>
+      <span class="ml-2">{{ item.label }}</span>
+  </a>
+</ng-template>
+</p-menubar>

@@ -1,0 +1,3 @@
+<img class="shadow-4" [src]="employee.profileImage" [alt]="employee.name" (load)="onLoad()" [ngStyle]="{display: hasLoaded ? '' : 'none'}" [height]="imgSize" [width]="imgSize">
+<img class="shadow-4" *ngIf="!hasLoaded" src="../../../../assets/loader.svg" [height]="imgSize" [width]="imgSize" >
+

@@ -1,0 +1,12 @@
+<div class="mt-5 mx-8">
+    <p-autoComplete placeholder="Search Employees"
+      field="name"
+      [(ngModel)]="selectedItem"
+      [suggestions]="suggestions"
+      (completeMethod)="search($event)"
+      (ngModelChange)="employeeSelected($event)"
+    />
+    <div class="mt-5">
+      <app-employee-table [employees]="employees" (itemSelected)="employeeSelected($event)"></app-employee-table>
+    </div>
+</div>
